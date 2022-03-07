@@ -1,0 +1,328 @@
+* {
+  margin: 0; /* définit la taille des marges sur les quatre côtés de l'élément */
+  padding: 0; /* définit les différents écarts de remplissage sur les quatre côtés d'un élément */
+  box-sizing: border-box;
+}
+:root {
+  /* Declaration des variables */
+  --primary-color: #e1ad01; /*Couleur jaune moutarde*/
+  --secondary-color: #61511d;
+  --fond-color: #000;
+}
+body {
+  display: flex;
+  height: 100vh; /*Prend la heuteur complete*/
+  max-width: 1300px; /*A modifier*/
+  margin: 0 auto; /* Centre le body */
+  padding: 0 10px;
+  background-color: var(--fond-color);
+  color: var(--primary-color);
+}
+
+/****** Debut Div left CSS ******/
+.left {
+  border-right: 1px solid var(--primary-color);
+  flex: 0.2; /* Raccourci qui permet de spécifier un facteur d'agrandissement ou de réduction de la taille d'un élément flexible Css en fonction de l'espace disponible dans leur conteneur Flexbox Css et par rapport à l'axe principal. */
+  min-width: 250px;
+  margin-top: 0px; /*La div est colle sur le haut*/
+  padding-left: 20px;
+  padding-right: 20px;
+  color: var(--primary-color);
+}
+.leftMenu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.leftMenu .iconMenuList,
+.iconMenu {
+  padding: 20px; /*Espace entre eux*/
+}
+.leftMenu h2 {
+  font-weight: 800;
+  font-size: 20px;
+  margin-right: 20px;
+  color: var(--primary-color);
+}
+.leftMenu a {
+  outline: none;
+  text-decoration: none;
+}
+.leftMenu:hover {
+  background: var(--secondary-color);
+  border-radius: 30px;
+  /* color: var(--fond-color); */
+  font-style: italic;
+  transition: color 100ms ease-out;
+}
+.leftMenu h2:hover {
+  color: var(--fond-color);
+}
+.leftMenu_btn {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: black;
+  font-weight: 900;
+  border-radius: 30px;
+  height: 50px;
+  margin-top: 20px;
+}
+.iconMenu {
+  color: var(--twitter-color);
+  font-size: 30px;
+}
+.left_bottom {
+  bottom: 30px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  width: 245px;
+  height: 8%;
+  /* justify-content: space-between; */
+}
+.left_bottom img {
+  border-radius: 50%;
+  height: 50px;
+  margin-top: 2%;
+  margin-left: 5px;
+}
+.left_bottom_main {
+  width: 60%;
+  margin-left: 10px;
+}
+.left_bottom_main_header {
+  padding-top: 5px;
+}
+.left_bottom_main_header h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.left_bottom_main_header h4 {
+  font-weight: lighter;
+}
+.left_bottom:hover {
+  background: var(--secondary-color);
+  border-radius: 30px;
+  transition: color 100ms ease-out;
+}
+.left_bottom_icon_barre {
+  padding-top: 70%;
+}
+
+/****** Fin Div left CSS ******/
+/************************************************************************************************************/
+/****** Debut Div middle CSS ******/
+.middle {
+  flex: 0.5; /* Ou width:50% prend 50% de la taille de body */
+  border-right: 1px solid var(--primary-color);
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+.middle::-webkit-scrollbar {
+  display: none;
+}
+.middle {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/*** Div haut middle***/
+.middle_header {
+  position: sticky; /* En position sticky, ma div textBox se cale dessous celle ci et non en dessous */
+  top: 0;
+  padding: 16px 16px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px) saturate(150%);
+}
+.middle_header h2 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/*** Div haut middle ***/
+/*** Div textBox middle ***/
+.textBox {
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.textBox form {
+  display: flex;
+  flex-direction: column; /* Positionne les elements de en colonne */
+}
+.textBox img {
+  border-radius: 50%; /* Pour mettre l'image ronde */
+  height: 40px;
+}
+.textBox_input {
+  display: flex;
+  padding: 20px;
+}
+.textBox_input input {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none; /* Permet de retirer les coutour du input*/
+  outline: none;
+  border-radius: 10px;
+  background-color: var(--fond-color);
+  color: var(--primary-color);
+}
+#textBox_ph::placeholder {
+  /* Permet de changer la couleur du texte placeholder */
+  color: var(--primary-color);
+}
+.textBox_btn {
+  /* Couleur du btn */
+  background-color: var(--primary-color);
+  color: var(--secondary-color); /* Couleur du texte du btn */
+  font-weight: 900;
+  /* Forme et taille du btn */
+  border: none; /* Retire les bords du btn */
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  /* Position du btn */
+  margin-top: 20px;
+  margin-left: auto;
+}
+/*** Fin Div textBox middle ***/
+/*** Div articleBox ***/
+.articleBox {
+  /* background-color: rosybrown; */
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+.articleBox_avatar {
+  /* background-color: pink; */
+  padding: 20px;
+  height: 200px;
+}
+.articleBox_avatar img {
+  border-radius: 50%; /* Permet de mettre l'image ronde*/
+  height: 40px;
+}
+.articleBox_main {
+  flex: 1;
+  padding: 10px;
+}
+/* .articleBox_main_header {
+  background-color: black;
+} */
+.articleBox_main_header_title h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* .articleBox_main_header_title_badge {
+  font-size: 14px !important;
+  color: var(--primary-color);
+  margin-right: 5px;
+  background-color: aqua;
+} */
+.articleBox_main_header_title_user {
+  font-weight: 600;
+  font-size: 15px;
+  color: gray;
+  font-weight: lighter;
+}
+.articleBox_main_contenu {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.articleBox_main img {
+  width: 500px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+.articleBox_main_footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/*** Fin Div articleBox ***/
+/****** Fin Div middle CSS ******/
+/************************************************************************************************************/
+/****** Debut Div right CSS ******/
+.right {
+  flex: 0.3;
+  padding-top: 10px;
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+.right::-webkit-scrollbar {
+  display: none;
+}
+.right {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.right_footer {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+/* .box_small {
+  background: var(--primary-color);
+  width: 80%;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.box_medium {
+  background: var(--primary-color);
+  width: 80%;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.box_large {
+  background: var(--primary-color);
+  width: 80%;
+  height: 350px;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+} */
+.box {
+  background: var(--primary-color);
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.large {
+  height: 350px;
+}
+.medium {
+  height: 250px;
+}
+.small {
+  height: 150px;
+}
+/****** Fin Div right CSS ******/
+
+/****** Media pour les ecrans jusqu'a 960px ******/
+@media (max-width: 960px) {
+  /**
+	 * Ne sera affiche que la colone du milieu
+	 */
+  .left {
+    display: none;
+  }
+  .right {
+    display: none;
+  }
+  .middle {
+    background-color: red;
+  }
+}
